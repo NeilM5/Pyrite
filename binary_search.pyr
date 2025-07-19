@@ -1,0 +1,35 @@
+# Binary Search Function
+
+func bin_search(arr, target, low, high)
+{
+    while low <= high
+    {
+        var mid = low + (high - low) // 2
+
+        if arr[mid] == target
+        {
+            return(mid)
+        }
+        elif arr[mid] < target
+        {
+            over low = mid + 1
+        }
+        else
+        {
+            over high = mid - 1
+        }
+    }
+
+    return(-1)
+}
+
+var nums = [1, 2, 3, 5, 10, 20, 30, 100, 150]
+
+while true
+{
+    var target = input("Enter Num: ")
+
+    var result = bin_search(nums, target, 0, len(nums) - 1)
+
+    exec(result)
+}
